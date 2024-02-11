@@ -19,6 +19,14 @@ cd next-password-protect-example
 npm install
 ```
 
+Create an `.env.local` file:
+
+```
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=replace_with_your_secret
+NEXTAUTH_PASSWORD=replace_with_your_password
+```
+
 ## Usage
 
 Run the development server:
