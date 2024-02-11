@@ -1,6 +1,6 @@
 # next-password-protect-example
 
-This is an example project that demonstrates how to password protect routes with [Next.js]() (App Router) and [NextAuth.js]() (aka Auth.js) might work.
+This is an example project that demonstrates how to password protect routes with [Next.js](https://nextjs.org/) (App Router) and [NextAuth.js](https://next-auth.js.org/) (aka Auth.js) might work.
 
 Read the full walkthrough at [https://www.alexchantastic.com/password-protecting-next](https://www.alexchantastic.com/password-protecting-next).
 
