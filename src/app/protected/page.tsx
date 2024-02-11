@@ -6,7 +6,7 @@ export default async function Protected() {
   const session = await getServerSession(authOptions);
 
   if (!session) {
-    redirect('/api/auth/signin');
+    redirect('/api/auth/signin?callbackUrl=/protected');
   }
 
   return (
