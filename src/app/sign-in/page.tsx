@@ -1,17 +1,19 @@
 import { redirect } from "next/navigation";
-import { cookies } from 'next/headers'
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/auth';
+import { cookies } from "next/headers";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/auth";
 
 export default async function SignIn() {
   const session = await getServerSession(authOptions);
   const cookieStore = cookies();
 
   if (session) {
-    redirect('/');
+    redirect("/");
   }
 
-  const csrfToken = cookieStore.get('next-auth.csrf-token')?.value.split('|')[0];
+  const csrfToken = cookieStore
+    .get("next-auth.csrf-token")
+    ?.value.split("|")[0];
 
   return (
     <form method="post" action="/api/auth/callback/credentials">
@@ -22,5 +24,5 @@ export default async function SignIn() {
       </label>
       <button type="submit">Sign in</button>
     </form>
-  )
+  );
 }

@@ -7,9 +7,11 @@ export default function Protected() {
       <p>This page is password protected with middleware!</p>
       <ul>
         <li>
-          <Link href="/middleware-protected/nested-middleware-protected">🔒 Nested page protected with middleware</Link>
+          <Link href="/middleware-protected/nested-middleware-protected">
+            🔒 Nested page protected with middleware
+          </Link>
         </li>
       </ul>
     </main>
-  )
+  );
 }

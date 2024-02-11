@@ -4,5 +4,5 @@ export default function Unprotected() {
       <h1>🌎 Unprotected page</h1>
       <p>This page is not password protected!</p>
     </main>
-  )
+  );
 }

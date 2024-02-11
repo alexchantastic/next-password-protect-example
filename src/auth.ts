@@ -11,7 +11,7 @@ export const authOptions: NextAuthOptions = {
           type: "password",
         },
       },
-      async authorize(credentials, req) {
+      async authorize(credentials, _request) {
         if (credentials?.password == process.env.NEXTAUTH_PASSWORD) {
           return { id: "0" };
         } else {
@@ -24,6 +24,6 @@ export const authOptions: NextAuthOptions = {
     strategy: "jwt",
   },
   pages: {
-    signIn: "/sign-in"
-  }
+    signIn: "/sign-in",
+  },
 };
