@@ -8,8 +8,7 @@ export default async function SignIn() {
   const cookieStore = cookies();
 
   if (session) {
-    const callbackUrl = cookieStore.get('next-auth.callback-url')?.value.split('|')[0];
-    redirect(callbackUrl ? callbackUrl : '/');
+    redirect('/');
   }
 
   const csrfToken = cookieStore.get('next-auth.csrf-token')?.value.split('|')[0];
