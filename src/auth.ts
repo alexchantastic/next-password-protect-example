@@ -12,7 +12,7 @@ export const authOptions: NextAuthOptions = {
         },
       },
       async authorize(credentials, req) {
-        if (credentials?.password == "test") {
+        if (credentials?.password == process.env.NEXTAUTH_PASSWORD) {
           return { id: "0" };
         } else {
           return null;
