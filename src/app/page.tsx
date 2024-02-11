@@ -17,6 +17,11 @@ export default function Home() {
           </ul>
         </li>
         <li>
+          <Link href="/client-protected">
+            🔒 Protected page (client-component)
+          </Link>
+        </li>
+        <li>
           <Link href="/unprotected">🌎 Unprotected page</Link>
         </li>
       </ul>
