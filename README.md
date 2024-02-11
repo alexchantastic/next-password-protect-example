@@ -38,5 +38,6 @@ src/
     ├── middleware-protected/
     │   └── nested-middleware-protected/
     ├── protected/
+    ├── sign-in/
     └── unprotected/
 ```
