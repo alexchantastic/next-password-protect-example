@@ -11,6 +11,11 @@ export default function Protected() {
             🔒 Nested page protected with middleware
           </Link>
         </li>
+        <li>
+          <Link href="/middleware-protected/nested-middleware-protected">
+            🔒 Nested page protected with middleware (client component)
+          </Link>
+        </li>
       </ul>
     </main>
   );

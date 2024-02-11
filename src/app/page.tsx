@@ -9,10 +9,19 @@ export default function Home() {
           <Link href="/protected">🔒 Protected page</Link>
         </li>
         <li>
-          <Link href="/middleware-protected">🔒 Protected page with middleware</Link>
+          <Link href="/middleware-protected">
+            🔒 Protected page with middleware
+          </Link>
           <ul>
             <li>
-              <Link href="/middleware-protected/nested-middleware-protected">🔒 Protected nested page with middleware</Link>
+              <Link href="/middleware-protected/nested-middleware-protected">
+                🔒 Protected nested page with middleware
+              </Link>
+            </li>
+            <li>
+              <Link href="/middleware-protected/nested-client-middleware-protected">
+                🔒 Protected nested page with middleware (client component)
+              </Link>
             </li>
           </ul>
         </li>
