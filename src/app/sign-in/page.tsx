@@ -11,9 +11,10 @@ export default async function SignIn() {
     redirect("/");
   }
 
-  const csrfToken = cookieStore
-    .get("next-auth.csrf-token")
-    ?.value.split("|")[0];
+  const csrfTokenCookie = `${
+    process.env.NODE_ENV == "production" ? "__Host-" : ""
+  }next-auth.csrf-token`;
+  const csrfToken = cookieStore.get(csrfTokenCookie)?.value.split("|")[0];
 
   return (
     <form method="post" action="/api/auth/callback/credentials">
