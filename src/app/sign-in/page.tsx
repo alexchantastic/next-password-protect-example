@@ -14,7 +14,7 @@ export default async function SignIn({
   }
 
   return (
-    <form method="post" action={auth}>
+    <form action={auth}>
       <input
         name="redirect"
         type="hidden"
