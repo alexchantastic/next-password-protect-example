@@ -1,8 +1,8 @@
 # next-password-protect-example
 
-This is an example project that demonstrates how to password protect routes with [Next.js](https://nextjs.org/) (App Router) and [NextAuth.js](https://next-auth.js.org/) (aka Auth.js) might work.
+This is an example project that demonstrates how to password protect routes with [Next.js](https://nextjs.org/) (App Router) and [iron-session](https://github.com/vvo/iron-session).
 
-Read the full walkthrough at [https://www.alexchantastic.com/password-protecting-next](https://www.alexchantastic.com/password-protecting-next).
+Read the full walkthrough at [https://www.alexchantastic.com/revisiting-password-protecting-next](https://www.alexchantastic.com/revisiting-password-protecting-next).
 
 ## Setup
 
@@ -22,9 +22,8 @@ npm install
 Create an `.env.local` file:
 
 ```
-NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=replace_with_your_secret
-NEXTAUTH_PASSWORD=replace_with_your_password
+IRON_SESSION_SECRET="replace_with_your_secret" # Must be at least 32 characters
+IRON_SESSION_PASSWORD="replace_with_your_password"
 ```
 
 ## Usage
@@ -49,3 +48,4 @@ src/
     ├── sign-in/
     └── unprotected/
 ```
+
