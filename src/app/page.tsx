@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main>
-      <h1>Next.js Password Protect with NextAuth.js</h1>
+      <h1>Next.js Password Protect with iron-session</h1>
       <ul>
         <li>
           <Link href="/protected">🔒 Protected page</Link>
