@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { SessionData } from "./auth";
+import { redirect } from "next/navigation";
 
 export function useSession() {
   const [session, setSession] = useState<SessionData | null>(null);
@@ -21,6 +22,14 @@ export function useSession() {
 
     fetchSession();
   }, []);
+
+  useEffect(() => {
+    if (session && !session.isAuthenticated) {
+      const redirectPath = window.location.pathname;
+
+      redirect(`/sign-in?redirect=${encodeURIComponent(redirectPath)}`);
+    }
+  }, [isLoading, session]);
 
   return { session, isLoading };
 }

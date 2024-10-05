@@ -1,17 +1,9 @@
 "use client";
 
 import { useSession } from "@/utils/use-session";
-import { redirect } from "next/navigation";
-import { useEffect } from "react";
 
 export default function Protected() {
-  const { session, isLoading } = useSession();
-
-  useEffect(() => {
-    if (session && !session.isAuthenticated) {
-      redirect("/sign-in");
-    }
-  }, [isLoading, session]);
+  const { isLoading } = useSession();
 
   if (isLoading) {
     return "Loading...";
