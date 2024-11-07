@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { SessionData } from "./auth";
 import { redirect } from "next/navigation";
 
-export function useSession() {
+export function useAuth() {
   const [session, setSession] = useState<SessionData | null>(null);
+  const isAuthenticated = session && session.isAuthenticated;
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -24,12 +25,12 @@ export function useSession() {
   }, []);
 
   useEffect(() => {
-    if (session && !session.isAuthenticated) {
+    if (isAuthenticated != null && !isAuthenticated) {
       const redirectPath = window.location.pathname;
 
       redirect(`/sign-in?redirect=${encodeURIComponent(redirectPath)}`);
     }
-  }, [isLoading, session]);
+  }, [isAuthenticated]);
 
-  return { session, isLoading };
+  return { isAuthenticated, isLoading };
 }

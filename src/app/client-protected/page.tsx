@@ -1,9 +1,9 @@
 "use client";
 
-import { useSession } from "@/utils/use-session";
+import { useAuth } from "@/utils/use-auth";
 
 export default function Protected() {
-  const { isLoading } = useSession();
+  const { isLoading } = useAuth();
 
   if (isLoading) {
     return "Loading...";
