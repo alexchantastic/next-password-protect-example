@@ -9,17 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "iron-session": "^8.0.3",
-    "next": "14.2.13",
+    "iron-session": "^8",
+    "next": "^15",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^22",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.13",
+    "eslint": "^9",
+    "eslint-config-next": "^15",
     "typescript": "^5"
   }
 }
