@@ -9,8 +9,6 @@ export function useAuth() {
 
   useEffect(() => {
     async function fetchSession() {
-      setIsLoading(true);
-
       try {
         const res = await fetch("/api/session");
         setSession(await res.json());
