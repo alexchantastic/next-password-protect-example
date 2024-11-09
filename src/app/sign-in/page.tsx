@@ -2,11 +2,12 @@ import { getSession } from "@/utils/auth";
 import { redirect } from "next/navigation";
 import { auth } from "./actions";
 
-export default async function SignIn({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
+interface Props {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export default async function SignIn(props: Props) {
+  const searchParams = await props.searchParams;
   const session = await getSession();
 
   if (session.isAuthenticated) {

@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 export function useAuth() {
   const [session, setSession] = useState<SessionData | null>(null);
   const isAuthenticated = session && session.isAuthenticated;
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchSession() {
@@ -25,12 +25,12 @@ export function useAuth() {
   }, []);
 
   useEffect(() => {
-    if (isAuthenticated != null && !isAuthenticated) {
+    if (!isLoading && !isAuthenticated) {
       const redirectPath = window.location.pathname;
 
       redirect(`/sign-in?redirect=${encodeURIComponent(redirectPath)}`);
     }
-  }, [isAuthenticated]);
+  }, [isLoading, isAuthenticated]);
 
   return { isAuthenticated, isLoading };
 }

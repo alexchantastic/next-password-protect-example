@@ -3,7 +3,7 @@
 import { useAuth } from "@/utils/use-auth";
 
 export default function Protected() {
-  const { isLoading } = useAuth();
+  const { isAuthenticated, isLoading } = useAuth();
 
   if (isLoading) {
     return "Loading...";
@@ -12,6 +12,7 @@ export default function Protected() {
   return (
     <main>
       <h1>🔒 Protected page</h1>
+      {isAuthenticated ? "authed" : "not authed"}
       <p>This page is password protected!</p>
     </main>
   );
